@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turflix</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .rectangle-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rectangle {
+      position: relative;
+      width: calc(10% - 10px);
+      background-color: #555;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+      border: 2px solid red;
+      border-radius: 8px;
+      transition: border-color 0.3s; /* Dodano efekt przejścia dla zmiany koloru obramówki */
+    }
+
+    .rectangle:hover {
+      border-color: white; /* Zmieniono kolor obramówki na biały po najechaniu myszką */
+    }
+
+    .rectangle a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .heart {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 20px;
+      color: gray;
+      cursor: pointer;
+    }
+
+    .heart.clicked {
+      color: red;
+    }
+
+    .microphone {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .microphone.muted {
+      text-decoration: line-through;
+    }
+
+    .corner-box {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #111;
+      padding: 5px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .smiley {
+      margin-right: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="sciezka-do-twojej-muzyki.mp3" type="audio/mp3">
+    Twoja przeglądarka nie obsługuje tagu audio.
+  </audio>
+
+  <div class="corner-box" onclick="redirectToIndex()">
+    <div class="smiley">:)</div>
+    Zosia, K
+  </div>
+
+  <header>
+    Turflix
+  </header>
+
+  <div class="container">
+    <div class="rectangle-container">
+      <div class="rectangle" id="strona1">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="Film1.html" onclick="playMusic()">Turecki serjal</a>
+      </div>
+      <div class="rectangle" id="strona2">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-2" onclick="playMusic()">Tytuł Strony 2</a>
+      </div>
+      <!-- Dodaj więcej prostokątów z linkami według potrzeb -->
+      <div class="rectangle" id="strona3">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-3" onclick="playMusic()">Tytuł Strony 3</a>
+      </div>
+      <div class="rectangle" id="strona4">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-4" onclick="playMusic()">Tytuł Strony 4</a>
+      </div>
+      <div class="rectangle" id="strona5">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-5" onclick="playMusic()">Tytuł Strony 5</a>
+      </div>
+      <div class="rectangle" id="strona6">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-6" onclick="playMusic()">Tytuł Strony 6</a>
+      </div>
+      <div class="rectangle" id="strona7">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-7" onclick="playMusic()">Tytuł Strony 7</a>
+      </div>
+      <div class="rectangle" id="strona8">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-8" onclick="playMusic()">Tytuł Strony 8</a>
+      </div>
+      <div class="rectangle" id="strona9">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-9" onclick="playMusic()">Tytuł Strony 9</a>
+      </div>
+      <div class="rectangle" id="strona10">
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+        <a href="link-do-strony-10" onclick="playMusic()">Tytuł Strony 10</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="microphone" onclick="toggleMute()">
+    &#127908;
+  </div>
+
+  <script>
+    function redirectToIndex() {
+      window.location.href = "Index.html";
+    }
+
+    function toggleHeart(heart) {
+      heart.classList.toggle("clicked");
+    }
+
+    function playMusic() {
+      var audio = document.getElementById("backgroundMusic");
+      audio.play();
+    }
+
+    function toggleMute() {
+      var audio = document.getElementById("backgroundMusic");
+      audio.muted = !audio.muted;
+      var microphone = document.querySelector(".microphone");
+      microphone.classList.toggle("muted");
+    }
+  </script>
+</body>
+</html>

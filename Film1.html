@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turflix - Zdrada Czerwieni</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .movie-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .chapter {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .rectangle-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rectangle {
+      width: calc(10% - 10px);
+      background-color: #555;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+      border: 2px solid red;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .rectangle:hover {
+      border-color: white;
+    }
+
+    .corner-box {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #111;
+      padding: 5px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .smiley {
+      margin-right: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Turflix
+  </header>
+
+  <div class="container">
+    <div class="chapter">
+      Rozdział 1
+    </div>
+
+    <div class="rectangle-container">
+      <div class="rectangle" id="strona1">
+        <a href="#">Tytuł 1</a>
+      </div>
+      <div class="rectangle" id="strona2">
+        <a href="#">Tytuł 2</a>
+      </div>
+      <div class="rectangle" id="strona3">
+        <a href="#">Tytuł 3</a>
+      </div>
+      <div class="rectangle" id="strona4">
+        <a href="#">Tytuł 4</a>
+      </div>
+      <div class="rectangle" id="strona5">
+        <a href="#">Tytuł 5</a>
+      </div>
+      <div class="rectangle" id="strona6">
+        <a href="#">Tytuł 6</a>
+      </div>
+      <div class="rectangle" id="strona7">
+        <a href="#">Tytuł 7</a>
+      </div>
+      <div class="rectangle" id="strona8">
+        <a href="#">Tytuł 8</a>
+      </div>
+      <div class="rectangle" id="strona9">
+        <a href="#">Tytuł 9</a>
+      </div>
+      <div class="rectangle" id="strona10">
+        <a href="#">Tytuł 10</a>
+      </div>
+    </div>
+
+    <div class="chapter">
+      Rozdział 2
+    </div>
+
+    <div class="rectangle-container">
+      <div class="rectangle" id="strona11">
+        <a href="#">Tytuł 11</a>
+      </div>
+      <div class="rectangle" id="strona12">
+        <a href="#">Tytuł 12</a>
+      </div>
+      <div class="rectangle" id="strona13">
+        <a href="#">Tytuł 13</a>
+      </div>
+      <div class="rectangle" id="strona14">
+        <a href="#">Tytuł 14</a>
+      </div>
+      <div class="rectangle" id="strona15">
+        <a href="#">Tytuł 15</a>
+      </div>
+      <div class="rectangle" id="strona16">
+        <a href="#">Tytuł 16</a>
+      </div>
+      <div class="rectangle" id="strona17">
+        <a href="#">Tytuł 17</a>
+      </div>
+      <div class="rectangle" id="strona18">
+        <a href="#">Tytuł 18</a>
+      </div>
+      <div class="rectangle" id="strona19">
+        <a href="#">Tytuł 19</a>
+      </div>
+      <div class="rectangle" id="strona20">
+        <a href="#">Tytuł 20</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="corner-box" onclick="redirectToTurflix()">
+    <div class="smiley">:)</div>
+    Zosia, K
+  </div>
+
+  <script>
+    function redirectToTurflix() {
+      window.location.href = "turflix.html";
+    }
+  </script>
+</body>
+</html>
